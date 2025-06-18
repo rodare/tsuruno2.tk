@@ -22,16 +22,16 @@
 function cityMember(){
   var a= document.getElementById("output").value;
     if(a==="Kraków"){
-  var arr=["select member","Milko-Grozeb", "Rodrigo-Arenas", "Bacho-Chubinidze", "Magda-Grzesiak"];
+  var arr=["member","Milko-G", "Rodrigo-A", "Bacho-C", "Magda-G"];
     }
     else if(a==="Poznan"){
   var arr=["Kasia","Eduardo","Lorena"];
           }
     else if(a==="Santiago"){
-  var arr=["select member", "Magdalena-Carrasco","Diego"];
+  var arr=["member", "Magdalena-C","Diego"];
             }
     else if(a==="La_Serena"){
-  var arr=["select member", "Ignacio", "Pancho", "Halszka", "Max", "Esteban"];
+  var arr=["member", "Ignacio", "Pancho", "Halszka", "Max", "Esteban"];
             }
     else
   var string="";
@@ -50,7 +50,7 @@ function memberRedirect(){
     location.replace("/../../rodrigo-arenas")
 
 }
-    else if(a==="Milko-Grozeb"){
+    else if(a==="Milko-G"){
      
       location.replace("/../../milko-grozeb")
   

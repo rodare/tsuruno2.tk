@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equal Height with Grid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .main-layout-grid {
+            display: grid; /* This is the key: makes direct children grid items */
+            grid-template-columns: 250px 1fr; /* Defines two columns: fixed 250px and 1fr (remaining space) */
+            /* grid-template-columns: 1fr 3fr; would make it a 1/4 and 3/4 split */
+            gap: 0px; /* Space between columns, if desired */
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            min-height: 300px; /* Just for initial visual */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+
+        .aside-element-grid {
+            padding: 20px;
+            background-color: #e6f7ff; /* Light blue */
+            border-right: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+
+        .content-element-grid {
+            padding: 20px;
+            background-color: #fff; /* White */
+            box-sizing: border-box;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1em;
+        }
+
+        /* Example to show dynamic height change */
+        .content-element-grid p:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Equal Height Columns Example (CSS Grid)</h1>
+    <p>This example uses CSS Grid to achieve the same effect.</p>
+
+    <div class="main-layout-grid">
+        <aside class="aside-element-grid">
+            <h2>Aside Navigation</h2>
+            <ul>
+                <li><a href="#">Link A</a></li>
+                <li><a href="#">Link B</a></li>
+                <li><a href="#">Link C</a></li>
+            </ul>
+            <p>This sidebar automatically matches the height of the main content area.</p>
+        </aside>
+
+        <main class="content-element-grid" id="dynamicContentGrid">
+            <h2>Main Content Area</h2>
+            <p>This is the primary content. With CSS Grid, items within a row naturally stretch to fill the height of the tallest item in that row.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </main>
+    </div>
+
+    <h3>Click buttons to change content length:</h3>
+    <button onclick="makeContentShortGrid()">Make Content Short</button>
+    <button onclick="makeContentMediumGrid()">Make Content Medium</button>
+    <button onclick="makeContentLongGrid()">Make Content Long</button>
+
+    <script>
+        const contentDivGrid = document.getElementById('dynamicContentGrid');
+        const shortContentGrid = `
+            <h2>Main Content Area</h2>
+            <p>This is the primary content. It's currently short.</p>
+        `;
+        const mediumContentGrid = `
+            <h2>Main Content Area</h2>
+            <p>This is the primary content. With CSS Grid, items within a row naturally stretch to fill the height of the tallest item in that row.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        `;
+        const longContentGrid = `
+            <h2>Main Content Area</h2>
+            <p>This is the primary content. With CSS Grid, items within a row naturally stretch to fill the height of the tallest item in that row.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        `;
+
+        function makeContentShortGrid() {
+            contentDivGrid.innerHTML = shortContentGrid;
+        }
+        function makeContentMediumGrid() {
+            contentDivGrid.innerHTML = mediumContentGrid;
+        }
+        function makeContentLongGrid() {
+            contentDivGrid.innerHTML = longContentLong; // Typo here, should be longContentGrid
+        }
+
+        // Corrected the typo for makeContentLongGrid function
+        function makeContentLongGrid() {
+            contentDivGrid.innerHTML = longContentGrid;
+        }
+
+        // Initialize with medium content
+        makeContentMediumGrid();
+    </script>
+
+</body>
+</html>

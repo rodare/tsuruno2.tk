@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://fonts.googleapis.com/css?family=PT+Sans+Narrow&v1' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <a href="index.html"><img src="images/tsuru.png" alt="Tsuru"></a>
+    </div>
+    <div class="logo-title"><a href="index.html">Tsuruno</a></div>
+    <input type="checkbox" id="menu-bar">
+    <label for="menu-bar">Menu</label>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="#">works +</a>
+                <ul>
+                    <li><a href="#">audio</a></li>
+                    <li><a href="#">visual</a></li>
+                    <li><a href="#">audiovisual</a></li>
+                    <li><a href="#">written</a></li>
+                </ul>
+            </li>
+            <li><a href="#">blog</a></li>
+            <li><a href="#">activities +</a>
+                <ul>
+                    <li><a href="calendar.html">calendar</a></li>
+                </ul>
+            </li>
+            <li><a href="#">contact</a></li>
+        </ul>
+    </nav>
+</header>    
+
+<div class="content">
+    <div class="header">
+        <h2>Scrollable Image Gallery with Keyboard Navigation</h2>
+        <p>Scroll horizontally to see more images. Click on an image to expand it. Use **Left/Right arrow keys** or the on-screen arrows to navigate.</p>
+    </div>
+
+    <div class="gallery-row">
+        <div class="gallery-column">
+            <img src="images/thumbnails/1018-300x200.jpg" alt="Majestic Waterfall" data-fullsize-src="images/fullsize/1018-800x600.jpg">
+            <div class="caption">Waterfall</div>
+        </div>
+        <div class="gallery-column">
+            <img src="images/thumbnails/1015-300x200.jpg" alt="Snowy Mountain Peaks" data-fullsize-src="images/fullsize/1015-800x600.jpg">
+            <div class="caption">Snowy Mountains</div>
+        </div>
+        <div class="gallery-column">
+            <img src="images/thumbnails/10-300x200.jpg" alt="Vast Mountain Range" data-fullsize-src="images/fullsize/10-800x600.jpg">
+            <div class="caption">Vast Range</div>
+        </div>
+        <div class="gallery-column">
+            <img src="images/thumbnails/1025-300x200.jpg" alt="Aurora Lights Display" data-fullsize-src="images/fullsize/1025-800x600.jpg">
+            <div class="caption">Aurora Lights</div>
+        </div>
+        <div class="gallery-column">
+            <img src="images/thumbnails/1019-300x200.jpg" alt="Enchanted Forest Path" data-fullsize-src="images/fullsize/1019-800x600.jpg">
+            <div class="caption">Forest Path</div>
+        </div>
+        <div class="gallery-column">
+            <img src="images/thumbnails/1020-300x200.jpg" alt="Calm Ocean Sunset" data-fullsize-src="images/fullsize/1020-800x600.jpg">
+            <div class="caption">Ocean Sunset</div>
+        </div>
+        <div class="gallery-column">
+            <img src="images/thumbnails/1024-300x200.jpg" alt="Serene River Flow" data-fullsize-src="images/fullsize/1024-800x600.jpg">
+            <div class="caption">River Flow</div>
+        </div>
+        <div class="gallery-column">
+            <img src="images/thumbnails/1036-300x200.jpg" alt="Vibrant Cityscape" data-fullsize-src="images/fullsize/1036-800x600.jpg">
+            <div class="caption">Cityscape</div>
+        </div>
+    </div>
+
+    <div id="expandedContainer" class="expanded-container">
+        <span id="closeBtn" class="close-btn">&times;</span>
+        <img id="expandedImg" src="" alt="">
+        <div id="imgText" class="image-text"></div>
+
+        <span id="leftArrow" class="nav-arrow left">&#10094;</span> <span id="rightArrow" class="nav-arrow right">&#10095;</span> </div>
+
+    <script src="gallery.js"></script>
+
+</div>
+<aside>
+    <ul>
+    <div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = {"default_language":"en","languages":["en","es","pl","ja"],"wrapper_selector":".gtranslate_wrapper","flag_size":16,"flag_style":"3d"}</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/flags.js" defer></script>
+
+
+
+        <select id="input" onchange="countryCity()" class="notranslate">
+            <option>select</option>
+            <option>POLAND</option>
+            <option>CHILE</option>
+        </select>
+        <div>
+           <select id="output" onchange="cityMember()" class="notranslate"></select>
+        </div>
+        <div>
+            <select id="output2" onchange="memberRedirect()" class="notranslate"></select>
+        </div>
+    </ul>
+</aside>
+
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/gallery.js"></script>
+<script type="text/javascript" src="indiv.js"></script>
+
+</body>
+</html>

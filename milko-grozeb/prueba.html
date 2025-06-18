@@ -1,50 +1,81 @@
-<!doctype html>
-	<html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<meta charset="utf-8"/>
-	<title>Tsuruno Member</title>
-		<link rel="stylesheet" type="text/css" href="css/style.css" />
-		<script type="text/javascript" src="indiv.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equal Height with Grid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
 
+        .main-layout-grid {
+            display: grid; /* This is the key: makes direct children grid items */
+            grid-template-columns: 250px 1fr; /* Defines two columns: fixed 250px and 1fr (remaining space) */
+            /* grid-template-columns: 1fr 3fr; would make it a 1/4 and 3/4 split */
+            gap: 0px; /* Space between columns, if desired */
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            min-height: 300px; /* Just for initial visual */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: #fff;
+        }
+
+        .aside-element-grid {
+            padding: 20px;
+            background-color: #e6f7ff; /* Light blue */
+            border-right: 1px solid #ddd;
+            box-sizing: border-box;
+        }
+
+        .content-element-grid {
+            padding: 20px;
+            background-color: #fff; /* White */
+            box-sizing: border-box;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1em;
+        }
+
+        /* Example to show dynamic height change */
+        .content-element-grid p:last-child {
+            margin-bottom: 0;
+        }
+    </style>
 </head>
-
 <body>
-	<div class="wrap">
 
-	
+    <h1>Equal Height Columns Example (CSS Grid)</h1>
+    <p>This example uses CSS Grid to achieve the same effect.</p>
 
-  <script>myCalendar();</script>	
+    <div class="main-layout-grid">
+        <aside class="aside-element-grid">
+            <h2>Aside Navigation</h2>
+            <ul>
+                <li><a href="#">Link A</a></li>
+                <li><a href="#">Link B</a></li>
+                <li><a href="#">Link C</a></li>
+            </ul>
+            <p>This sidebar automatically matches the height of the main content area.</p>
+        </aside>
 
-
-  <aside>
-
-	<!-- GTranslate: https://gtranslate.io/ -->
-	<a href="#" onclick="doGTranslate('en|en');return false;" title="English" class="gflag nturl" style="background-position:-0px -0px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="English" /></a><a href="#" onclick="doGTranslate('en|fr');return false;" title="French" class="gflag nturl" style="background-position:-200px -100px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="French" /></a><a href="#" onclick="doGTranslate('en|de');return false;" title="German" class="gflag nturl" style="background-position:-300px -100px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="German" /></a><a href="#" onclick="doGTranslate('en|it');return false;" title="Italian" class="gflag nturl" style="background-position:-600px -100px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="Italian" /></a><a href="#" onclick="doGTranslate('en|ja');return false;" title="Japanese" class="gflag nturl" style="background-position:-700px -100px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="Japanese" /></a><a href="#" onclick="doGTranslate('en|pt');return false;" title="Portuguese" class="gflag nturl" style="background-position:-300px -200px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="Portuguese" /></a><a href="#" onclick="doGTranslate('en|ru');return false;" title="Russian" class="gflag nturl" style="background-position:-500px -200px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="Russian" /></a><a href="#" onclick="doGTranslate('en|es');return false;" title="Spanish" class="gflag nturl" style="background-position:-600px -200px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="Spanish" /></a>
-	
-	
-	<div id="google_translate_element2">
-	</div>
-	<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script>
-	
-	
-	
-			<li><a href="news.html">News</a></li>
-			<li><a href="downloads.html">Downloads</a></li>
-			
-			<li><a href="links.html">Links</a></li>
-	<li><a href="embeded.html">Embeded</a></li>
-			
-			<div id="memberName" ></div>
-		</ul>
-	
-	</aside>≤
-  
-
- </div>
-
-
-</div>
+        <main class="content-element-grid" id="dynamicContentGrid">
+            <h2>Main Content Area</h2>
+            <p>This is the primary content. With CSS Grid, items within a row naturally stretch to fill the height of the tallest item in that row.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </main>
+    </div>
 
 </body>
-
 </html>

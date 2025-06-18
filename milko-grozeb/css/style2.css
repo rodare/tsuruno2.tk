@@ -1,0 +1,230 @@
+    *{
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    /* text-transform: capitalize; */
+    text-decoration: none;
+    list-style-type: none;
+    }
+    body {    
+    min-height: 100vh;
+    background-color:#FBF9DB;
+
+    }
+
+    header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background:  rgb(214, 243, 255);
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    padding: 0px 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    }
+    header .logo-title{
+    font-weight: bolder;
+    font-size: 25px;
+    color: #333;
+    align-items: right;
+    }
+
+    header .navbar ul{
+    list-style: none;
+    }
+
+    header .navbar ul li{
+    position: relative;
+    float: left;
+    }
+
+
+    header .navbar ul li a{
+    font-size: 20px;
+    padding: 20px;
+    color: #333;
+    display: block;
+    }
+
+
+    header .navbar ul li a:hover{
+    background: #333;
+    color: #fff;
+    }
+
+    header .navbar ul li ul{
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background: #fff;
+    display: none;
+    }
+
+    header .navbar ul li ul li{
+    width: 100%;
+    border-top: 1px solid rgba(0,0,0,.1);
+    }
+
+    header .navbar ul li ul li ul{
+    left: 200px;
+    top: 0;
+    }
+
+    header .navbar ul li:focus-within > ul,
+    header .navbar ul li:hover > ul{
+    display: initial;
+    }
+
+    #menu-bar{
+    display: none;
+    }
+
+    header label{
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    display: none;
+    }
+
+    .main-layout-grid {
+    display: grid; /* This is the key: makes direct children grid items */
+    grid-template-columns: 115px 1fr; /* Defines two columns: fixed 250px and 1fr (remaining space) */
+    /* grid-template-columns: 1fr 3fr; would make it a 1/4 and 3/4 split */
+    gap: 0px; /* Space between columns, if desired */
+    width: 100%;
+    max-width: 100%;
+    margin: 120px auto;
+    /* border: 1px solid #ddd; */
+    min-height: 300px; /* Just for initial visual */
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+    background-color: #fff;
+    top: 200px;
+    }
+
+    .aside-element-grid {
+    padding: 20px;
+    background-color: #FBF9DB;
+    border-right: 1px solid #333;
+    box-sizing: border-box;
+    }
+
+    .content-element-grid {
+    padding: 20px;
+    background-color: #FBF9DB; 
+    box-sizing: border-box;
+    font-size: 18px;
+    line-height: 1.5vm;
+    }
+
+    footer {
+    clear: both;
+    }
+
+    .more{
+    display: none;
+    }
+    .post{
+    color: #9999a0;
+    font-size: 18px;
+    text-align: justify;
+    line-height: 25px;
+    font-family: 'Work Sans',sans-serif;
+
+    }
+    .post:not(:last-child){
+    margin-bottom: 30px;
+    }
+
+    /* Create two unequal columns that floats next to each other */
+    /* Left column */
+    .leftcolumn {
+    float: left;
+    width: 75%;
+    }
+
+    /* Right column */
+    .rightcolumn {
+    float: left;
+    width: 25%;
+    padding-left: 20px;
+    }
+
+    /* Fake image */
+    .fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+    }
+
+    /* Add a card effect for articles */
+    .card {
+    background-color: rgb(214, 243, 255);
+    padding: 20px;
+    margin-top: 20px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+    #more {display: none;}
+
+
+
+    @media(max-width:991px){
+    header{
+    padding: 6px;
+    }
+
+    header label{
+    display: initial;
+    }
+    header .logo a img{
+    height: 50px;
+    width: 90px;
+    }
+
+    header .navbar{
+    position: absolute;
+    top: 100%; left:0; right: 0;
+    background: #fff;
+    border-top: 1px solid rgba(0,0,0,.1);
+    display: none;
+    }
+
+    header .navbar ul li{
+    width: 100%;
+    }
+
+    header .navbar ul li ul{
+    position: relative;
+    width: 100%;
+    }
+    header .navbar ul li ul li{
+    background: #eee;
+    }
+    header .navbar ul li ul li ul{
+    width: 100%;
+    left: 0;
+    }
+
+    #menu-bar:checked ~ .navbar{
+    display: initial;
+    }
+
+    .main-layout-grid {
+    margin: 64px auto;
+    }
+
+    .leftcolumn, .rightcolumn {
+    width: 100%;
+    padding: 0;
+    }
+
+
+    }
+

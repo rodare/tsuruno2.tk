@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style2.css">
+    <script type="text/javascript src="indiv.js"></script>
+    <title>Equal Height with Grid</title>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <a href="index.html"><img src="images/tsuru.png" alt="Tsuru"></a>
+    </div>
+	    <div class="logo-title"><a href="index.html"><script>memberName();</script></a></div>
+
+    <input type="checkbox" id="menu-bar">
+    <label for="menu-bar">Menu</label>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">home</a></li>
+            <li><a href="#">works +</a>
+                <ul>
+                    <li><a href="audios.html">audio</a></li>
+                    <li><a href="gallery.html">visual</a></li>
+                    <li><a href="audiovisuals.html">audiovisual</a></li>
+                    <li><a href="written.html">written</a></li>
+                </ul>
+            </li>
+            <li><a href="blog.html">blog</a></li>
+            <li><a href="#">activities +</a>
+                <ul>
+                    <li><a href="calendar.html">calendar</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+    </nav>
+</header>    
+
+    <div class="main-layout-grid">
+        <aside class="aside-element-grid">
+    <ul>
+    <div class="gtranslate_wrapper"></div>
+    <script>window.gtranslateSettings = {"default_language":"en","languages":["en","es","pl","ja"],"wrapper_selector":".gtranslate_wrapper","flag_size":16,"flag_style":"3d"}</script>
+    <script src="https://cdn.gtranslate.net/widgets/latest/flags.js" defer></script>
+
+    <li><a href="../index.html"><i class="fa fa-home"></i></button>Back to Main</a></li>
+
+
+
+        <select id="input" onchange="countryCity()" class="notranslate">
+            <option>select</option>
+            <option>POLAND</option>
+            <option>CHILE</option>
+        </select>
+        <div>
+           <select id="output" onchange="cityMember()" class="notranslate"></select>
+        </div>
+        <div>
+            <select id="output2" onchange="memberRedirect()" class="notranslate"></select>
+        </div>
+    </ul>
+        </aside>
+
+        <main class="content-element-grid" id="dynamicContentGrid">
+<h3>Welcome to my site</h3>
+<p>Here I will be publishing my writings, images, videos, and audios.<br> Greetings,<br><script>memberName();</script></p>
+
+        </main>
+        <script type="text/javascript" src="js/main.js"></script>
+    </div>
+</html>
